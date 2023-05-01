@@ -14,6 +14,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import ChapterModal from './ChapterModal';
 import {Advice, Dilemma, Hadith, QuranicVerse, Wisdom} from '../App';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
 interface Props {
   visible?: boolean;
@@ -57,7 +58,7 @@ const ModalComponent: React.FC<Props> = (props: Props) => {
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-              alignItems: 'flex-start',
+              alignItems: 'center',
               padding: 10,
               borderStyle: 'solid',
               borderBottomWidth: 2,
@@ -73,19 +74,6 @@ const ModalComponent: React.FC<Props> = (props: Props) => {
 
             <View
               style={{
-                width: '90%',
-                paddingHorizontal: 6,
-                paddingVertical: 10,
-                borderRadius: 10,
-                backgroundColor: '#FDF0E6',
-                marginHorizontal: 2,
-              }}>
-              <Text style={styles.modalTitle}>
-                <Text style={{fontSize: 18}}>{lessonNumber}</Text>. {book.title}
-              </Text>
-            </View>
-            <View
-              style={{
                 width: '10%',
                 alignItems: 'center',
                 flexDirection: 'row',
@@ -94,19 +82,62 @@ const ModalComponent: React.FC<Props> = (props: Props) => {
               <TouchableOpacity
                 onPress={() => handlePress()}
                 style={{
-                  width: 25,
-                  height: 25,
+                  width: 30,
+                  height: 40,
 
-                  borderRadius: 50,
+                  borderRadius: 40,
                   alignItems: 'center',
                   flexDirection: 'row',
                   justifyContent: 'center',
                   // backgroundColor: '#FFA07A',
                   backgroundColor: '#FDF0E6',
                 }}>
-                <AntDesign name={'close'} size={24} color="#000" />
+                <FontAwesomeIcon
+                  name={'chevron-left'}
+                  size={18}
+                  style={{color: '#222222'}}
+                />
               </TouchableOpacity>
             </View>
+
+            <View
+              style={{
+                width: '90%',
+                paddingHorizontal: 6,
+                paddingVertical: 10,
+                borderRadius: 10,
+                borderTopRightRadius: 25,
+                backgroundColor: '#FDF0E6',
+                marginHorizontal: 2,
+              }}>
+              <Text style={styles.modalTitle}>
+                <Text style={{fontSize: 18}}>{lessonNumber}</Text>. {book.title}
+              </Text>
+            </View>
+
+            {/*<View*/}
+            {/*  style={{*/}
+            {/*    width: '10%',*/}
+            {/*    alignItems: 'center',*/}
+            {/*    flexDirection: 'row',*/}
+            {/*    justifyContent: 'center',*/}
+            {/*  }}>*/}
+            {/*  <TouchableOpacity*/}
+            {/*    onPress={() => handlePress()}*/}
+            {/*    style={{*/}
+            {/*      width: 25,*/}
+            {/*      height: 25,*/}
+
+            {/*      borderRadius: 50,*/}
+            {/*      alignItems: 'center',*/}
+            {/*      flexDirection: 'row',*/}
+            {/*      justifyContent: 'center',*/}
+            {/*      // backgroundColor: '#FFA07A',*/}
+            {/*      backgroundColor: '#FDF0E6',*/}
+            {/*    }}>*/}
+            {/*    <AntDesign name={'close'} size={24} color="#000" />*/}
+            {/*  </TouchableOpacity>*/}
+            {/*</View>*/}
           </View>
           {/*<View style={{height: '95%'}}>{props.children}</View>*/}
           <View style={{height: '95%'}}>
